@@ -18,6 +18,21 @@ module.exports = {
             options: { minimize: true }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              singleton: true
+            }
+          },
+          {
+            loader: "css-loader"
+          }
+        ],
+        include: path.resolve(__dirname, 'src')
       }
     ]
   },
